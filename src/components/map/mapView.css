@@ -1,0 +1,17 @@
+.marker {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  max-height: 64px;
+  border: 2px solid grey;
+  padding: 4px 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.marker img {
+  max-width: 64px;
+  max-height: 32px;
+  object-fit: contain;
+  margin-right: 12px;
+}
