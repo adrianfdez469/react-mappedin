@@ -6,26 +6,22 @@ import { Map } from './mapView';
 
 export const MapParent = props => {
 
-  const [showMap, setShowMap] = useState();
+  const [hidden, setShowMap] = useState(true);
 
   const showMyMap = () => {
-    setShowMap(true);
+    setShowMap(false);
   }
   const hideMyMap = () => {
-    setShowMap(false);
+    setShowMap(true);
     
   }
 
-  const map = showMap ? (
-    <Map>
-      <button onClick={hideMyMap}>Close Map</button>
-    </Map>
-  ) : null;
-
   return (
     <>
-      {!showMap && <button onClick={showMyMap}>Show Map</button>}
-      {map}
+      {hidden 
+        ? <button onClick={showMyMap}>Show Map</button> 
+        : <Map close={hideMyMap} />
+      }
     </>
   );
 
